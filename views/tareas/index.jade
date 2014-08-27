@@ -1,0 +1,20 @@
+block content
+h1 Mis tareas
+br
+a(href="/tareas/nueva", class="btn btn-primary") Añadir una tarea
+-if(docs.length)
+	table()
+		tr
+			th(colspan="2") Tarea
+		tbody
+		each tarea in docs
+			tr
+				td #{tarea.tarea}
+				td
+					a.btn(href="/tareas/#{tarea.id}/editar") Editar
+				td
+					form(id="", method="post", action="/tareas/delete/"+tarea.id)
+						input(type="hidden",name="_method", value="DELETE")
+						button.btn(type="submit") Borrar
+-else
+	p no tiene ninguna tarea

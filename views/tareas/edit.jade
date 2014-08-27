@@ -1,0 +1,15 @@
+block content
+
+h1 Editar vista tarea
+
+form(id="", method="post", action="/tareas/"+tarea.id)
+	input(type="hidden",name="_method",value="PUT")
+	fieldset
+		legend Editar tarea
+		div.clearfix
+			label Tarea
+			div.input
+				input(type="text",name='tarea[tarea]', class='xlarge', value="#{tarea.tarea}")
+			div.actions
+				input(type="submit", value="Guardar", class="btn btn-primary")
+				button(type="reset",class="btn") Cancelar
